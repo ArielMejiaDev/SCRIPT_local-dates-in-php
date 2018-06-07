@@ -38,4 +38,11 @@
     $formatoMonedaGt = number_format($numeroSinFormato, 2, '.', ',');
     // 1 234,56
     echo $formatoMonedaGt;
+    // Manipulando datos sumando o restando fechas.
+    echo '</br>';
+    $fecha = date("Y-m-d");//establciendo una fecha
+    $fecha = strtotime(date("Y-m-d", strtotime($fecha)) . " +1 month");//convierte a tiempo unix la fecha anterior en el formato dado en la funcion date, puede ser asi o en letras o resumido F d M y otros parametros para cambiar la salida 
+    $fecha = date("Y-m-t",$fecha);//con la funcion date regresamos al formato año-mes y dia tope del mes cambiando asi de unix time a el formato y-m-d o t en este caso
+    echo 'Fecha actual mas un mes y en su ultimo dia del mes: ' . $fecha;
+    //ojo el cambio puede ser sumar o restar dia mes o año
 ?>
